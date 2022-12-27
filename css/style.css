@@ -1,0 +1,203 @@
+:root {
+  --main-color: #03a9f4;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+.game {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #eee;
+}
+.container {
+  margin: 0 auto;
+  width: calc(100% - 200px)
+}
+@media (max-width: 992px) {
+  .container{
+    width: calc(100% - 100px);
+  }
+}
+@media (max-width: 430px) {
+  .container {
+    width: 100%;
+  }
+}
+.name {
+  padding: 15px;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  color: #fff;
+  background-color: var(--main-color,#03a9f4);
+}
+@media (max-width: 490px) {
+  .name {
+    font-size: 20px
+  }
+}
+.info {
+  padding: 10px;
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 6px;
+  background-color: #fff;
+}
+.info > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info div:not(:first-child) span {
+  color: #009688;
+  font-weight: bold;
+}
+.info .level {
+  position: relative;
+}
+.info .level span {
+  display: none;
+  position: absolute;
+  top: -40px;
+  left: 0;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #795548;
+  animation: pulse 1.2s infinite ease-out;
+}
+@keyframes pulse {
+  0% {
+    transform: translateY(0) translateX(-5%);
+  }
+  50% {
+    transform: translateY(-1rem) translateX(-5%);
+  }
+  100% {
+    transform: translateY(0) translateX(-5%);
+  }
+}
+.info .level span::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #795548;
+}
+.btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+.btns .startBtn,
+.btns .playAgain {
+  display: block;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  background-color: #03a9f4;
+}
+.the-word {
+  font-size: 60px;
+  margin: 15px 0;
+  text-align: center;
+  font-weight: bold;
+  user-select: none;
+  color: var(--main-color, #03a9f4);
+}
+.input {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin: 15px auto;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 6px;
+  caret-color: var(--main-color, #03a9f4);
+  outline: none;
+}
+.input:focus {
+  border: 3px solid var(--main-color, #03a9f4);
+}
+.disabled {
+  cursor: not-allowed;
+}
+.upcoming-words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  margin: 15px 0;
+  background-color: #fff;
+}
+.upcoming-words div {
+  padding: 10px;
+  margin: 5px;
+  font-weight: bold;
+  border-radius: 6px;
+  color: #fff;
+  background-color: var(--main-color,#03a9f4);
+}
+.finish {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  padding: 15px;
+}
+.finish .good {
+  color: var(--main-color, #03a9f4);
+}
+.finish .bad {
+  color: red;
+}
+.levelInfo {
+  color: #795548;
+  font-weight: bold;
+}
+table {
+  width: 100%;
+  margin: 15px 0;
+  border-collapse: collapse;
+}
+caption {
+  color: #fff;
+  padding: 5px 10px;
+  margin: 15px auto;
+  font-weight: bold;
+  width: fit-content;
+  border-radius: 5px;
+  background-color: #795548;
+}
+th, td {
+  padding: 5px;
+  color: white;
+  text-align: center;
+  border: 1px solid #ddd;
+  background-color: #03a9f4;
+}
+th {
+  background-color: #607d8b;
+}
+tr td:last-child  {
+  cursor: pointer;
+  color: red;
+}

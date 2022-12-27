@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Typing Speed Game">
+  <meta name="keywords" content="Making Typing Speed Game using HTML, CSS, and JavaScript">
+  <meta name="author" content="Muhammad Galhoum">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="main.js" defer></script>
+  <title>Typing Speed Game</title>
+</head>
+<body>
+  <div class="game">
+  <div class="name">Typing Speed Test Game</div>
+  <div class="container">
+    <div class="info">
+      <div>
+        <div class="level">Level:
+          <span id="tooltip">Select the Game level</span>
+          <select name="choice" required>
+            <option value="" disabled selected>Select the level</option>
+            <option value="Easy">Easy</option>
+            <option value="Normal">Normal</option>
+            <option value="Diffcult">Diffcult</option>
+          </select>
+        </div>
+        <div class="levelTime">Time: <span></span>s</div>
+      </div>
+      <div>
+        <div class="remainingTime">Time Left: <span></span>s</div>
+        <div class="score">
+          Score: <span class="mark">0</span> from <span class="total"></span>
+        </div>
+      </div>
+    </div>
+    <div class="btns">
+      <button class="startBtn">Start</button>
+      <button class="playAgain"><i class='fa fa-refresh'></i></button>
+    </div>
+    <div class="the-word"></div>
+    <input type="text" class="input" placeholder="Type here" spellcheck="false" autocomplete="off">
+    <div class="upcoming-words"></div>
+    <div class="finish"></div>
+    <table>
+      <caption>Daily Score</caption>
+      <thead>
+        <tr>
+        <th>Taken Date</th>
+        <th>Level</th>
+        <th>Score</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
